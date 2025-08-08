@@ -193,23 +193,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="images/clipboard-3418279616.png" class="img-fluid" width="505"></p>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Does high phone usage negatively impact on mental health? I predict that college students with a higher Internet usage will have higher mental health struggles.The data set I will use is Data on Internet Addiction and Mental Health among university students in Malawi</p>
+<p>Question 1: Does internet usage have a negative impact on mental health?</p>
+<p>Prediction: Individuals with a higher Internet usage will have higher mental health struggles.</p>
+<p>Second question: Does the correlation between high internet usage and SQR scores differ between gender.</p>
+<p>prediction: Both females and males will have a positive correlation between increasing internet usage and higher mental health struggles.</p>
+<p>The data set I will use is Data on Internet Addiction and Mental Health among university students in Malawi</p>
 <section id="approach" class="level3">
 <h3 class="anchored" data-anchor-id="approach">Approach</h3>
-<p>The data set That was utilized was taken between may 2018 and July 2018. The date was collected from 984 participants which included 639 males and 345 females. The sample was randomly selected to be given a mixture of online and paper based questionnaires. These questions were formed to measure their level of internet addiction and a SQR score. Their internet usage was measure on a scale from 0-100 where anything above 40 was considered excessive internet usage internet usage . Their SQR was measure on a scale of (0-20) where anything above 8 was considered at high risk for mental health disorder.</p>
+<p>The data set That was utilized was taken between may 2018 and July 2018. The date was collected from 984 participants which included 639 males and 345 females including 52 variables. The sample was randomly selected students who were given a mixture of online and paper based questionnaires. These questions were formed to measure their level of internet addiction and a SQR score. Their internet usage was measure on a scale from 0-100 where anything above 40 was considered excessive internet usage internet usage . Their SQR was measure on a scale of (0-20) where anything above 8 was considered at high risk for mental health disorder.</p>
 </section>
 </section>
 <section id="tools" class="level2">
 <h2 class="anchored" data-anchor-id="tools">Tools</h2>
 <ul>
 <li><p>R and Rstudio in Postit.Cloud was utilized for writing the script.</p></li>
-<li><p>Packages Included Tidyverse, readr, and ggplot2 for help creating vizulations.</p></li>
+<li><p>Packages Included Tidyverse and ggplot2 for to create visualizations.</p></li>
 <li><p>GitHub was utilized for website hosting</p></li>
 </ul>
 </section>
 <section id="approachpredictions" class="level1">
 <h1>Approach/Predictions</h1>
-<p>I will test my previous prediction by examining the correlation between internet usage and and SQR scores. I predict there will be a positive relationship between increasing internet usage and increasing SQR scores.</p>
+<p>I will test my previous prediction by examining the correlation between internet usage and and SQR scores. In addition I will create separate graphs for gender to examine how scenario reacts. I predict there will be a positive relationship between increasing internet usage and increasing SQR scores.</p>
 <p>Code -</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -239,9 +243,9 @@ dbl (51): Internet_usg, Internet_Add, Gender, Age_grp, Level_study, Yr_study...
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(phone_usage, <span class="fu">aes</span>(<span class="at">x =</span> New_SQR_total</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>, <span class="at">y =</span> Internet_usg)) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"blue"</span>, <span class="at">position =</span> <span class="st">"jitter"</span>)<span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span><span class="st">"lm"</span>, <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span> <span class="fu">labs</span>( <span class="at">title =</span> <span class="st">"Internet usage correlation with mental health"</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"#6699cc"</span>, <span class="at">position =</span> <span class="st">"jitter"</span>)<span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span><span class="st">"lm"</span>, <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span> <span class="fu">labs</span>( <span class="at">title =</span> <span class="st">"Internet usage vs mental health"</span>,</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">x=</span> <span class="st">"SQR(1-20)"</span>,</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">y=</span><span class="st">"Internet usage"</span>)<span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">y=</span><span class="st">"Internet usage (0-100) "</span>)<span class="sc">+</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
@@ -305,11 +309,14 @@ dbl (51): Internet_usg, Internet_Add, Gender, Age_grp, Level_study, Yr_study...
 #   life_no_internet &lt;dbl&gt;, act_annoyed &lt;dbl&gt;, late_night_logins &lt;dbl&gt;, …</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(phone_usage_filtered, <span class="fu">aes</span>(<span class="at">x =</span> New_SQR_total</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>, <span class="at">y =</span> Internet_usg)) <span class="sc">+</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"blue"</span>, <span class="at">position =</span> <span class="st">"jitter"</span>)<span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span><span class="st">"lm"</span>, <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span> <span class="fu">labs</span>( <span class="at">title =</span> <span class="st">"Internet usage correlation with mental health"</span>,</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">x=</span> <span class="st">"SQR(1-20)"</span>,</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">y=</span><span class="st">"Internet usage"</span>)<span class="sc">+</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>Gender_coded)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>, <span class="at">y =</span> Internet_usg, <span class="at">color=</span> Gender_coded)) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="st">"jitter"</span>)<span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span><span class="st">"lm"</span>, <span class="at">color=</span> <span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">title =</span> <span class="st">"Internet usage vs mental health"</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">x=</span> <span class="st">"SQR(1-20)"</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">y=</span><span class="st">"Internet usage"</span>)<span class="sc">+</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Gender_coded)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
@@ -328,7 +335,7 @@ dbl (51): Internet_usg, Internet_Add, Gender, Age_grp, Level_study, Yr_study...
 </section>
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
-<p>My original hypothesis that I predict that college students with a higher Internet usage will have higher mental health struggles was supported as there was a positive correlation between higher internet usage and higher SQR scores suggestion that those who spend more time online have a higher chance of struggling with their mental health.</p>
+<p>My original hypothesis that I predict that college students with a higher Internet usage will have higher mental health struggles was supported as there was a positive correlation between higher internet usage and higher SQR scores. This suggests that those who spend more time online have a higher chance of struggling with their mental health.</p>
 
 
 </section>

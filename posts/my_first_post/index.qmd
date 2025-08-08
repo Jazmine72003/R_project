@@ -78,7 +78,7 @@ ggplot(phone_usage_filtered, aes(x = New_SQR_total
 , y = Internet_usg, color= Gender_coded)) +
   geom_point(position = "jitter")+
   geom_smooth(method ="lm", color= "black")+
-  labs( title = "Internet usage mental health",
+  labs( title = "Internet usage vs mental health",
         x= "SQR(1-20)",
         y="Internet usage")+
   theme_classic() + 

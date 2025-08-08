@@ -4,21 +4,21 @@
     "href": "posts/my_first_post/index.html#introduction",
     "title": "R project",
     "section": "Introduction",
-    "text": "Introduction\nDoes high phone usage negatively impact on mental health? I predict that college students with a higher Internet usage will have higher mental health struggles.The data set I will use is Data on Internet Addiction and Mental Health among university students in Malawi\n\nApproach\nThe data set That was utilized was taken between may 2018 and July 2018. The date was collected from 984 participants which included 639 males and 345 females. The sample was randomly selected to be given a mixture of online and paper based questionnaires. These questions were formed to measure their level of internet addiction and a SQR score. Their internet usage was measure on a scale from 0-100 where anything above 40 was considered excessive internet usage internet usage . Their SQR was measure on a scale of (0-20) where anything above 8 was considered at high risk for mental health disorder."
+    "text": "Introduction\nQuestion 1: Does internet usage have a negative impact on mental health?\nPrediction: Individuals with a higher Internet usage will have higher mental health struggles.\nSecond question: Does the correlation between high internet usage and SQR scores differ between gender.\nprediction: Both females and males will have a positive correlation between increasing internet usage and higher mental health struggles.\nThe data set I will use is Data on Internet Addiction and Mental Health among university students in Malawi\n\nApproach\nThe data set That was utilized was taken between may 2018 and July 2018. The date was collected from 984 participants which included 639 males and 345 females including 52 variables. The sample was randomly selected students who were given a mixture of online and paper based questionnaires. These questions were formed to measure their level of internet addiction and a SQR score. Their internet usage was measure on a scale from 0-100 where anything above 40 was considered excessive internet usage internet usage . Their SQR was measure on a scale of (0-20) where anything above 8 was considered at high risk for mental health disorder."
   },
   {
     "objectID": "posts/my_first_post/index.html#tools",
     "href": "posts/my_first_post/index.html#tools",
     "title": "R project",
     "section": "Tools",
-    "text": "Tools\n\nR and Rstudio in Postit.Cloud was utilized for writing the script.\nPackages Included Tidyverse, readr, and ggplot2 for help creating vizulations.\nGitHub was utilized for website hosting"
+    "text": "Tools\n\nR and Rstudio in Postit.Cloud was utilized for writing the script.\nPackages Included Tidyverse and ggplot2 for to create visualizations.\nGitHub was utilized for website hosting"
   },
   {
     "objectID": "posts/my_first_post/index.html#conclusion",
     "href": "posts/my_first_post/index.html#conclusion",
     "title": "R project",
     "section": "Conclusion",
-    "text": "Conclusion\nThe graph depicts a weak positive correlation between increasing internet usage and higher SQR scores.\n\nlibrary(ggplot2)\nlibrary(tidyverse)\n\n\nphone_usage_filtered &lt;- phone_usage |&gt; filter(Gender &lt;=1 ) \n\nphone_usage_filtered &lt;- phone_usage_filtered |&gt; mutate(\n  Gender_coded = case_when(\n    Gender == 0 ~ \"Female\",\n    Gender == 1 ~ \"Male\"))\n\nlibrary(readr)\nphone_usage &lt;- read_csv(\"IAT_data_imported[1].csv\")\n\nRows: 984 Columns: 52\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (1): ID\ndbl (51): Internet_usg, Internet_Add, Gender, Age_grp, Level_study, Yr_study...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nphone_usage\n\n# A tibble: 984 × 52\n   ID    Internet_usg Internet_Add Gender Age_grp Level_study Yr_study\n   &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;\n 1 001             33            1      1       1           1        7\n 2 002             10            0      1       1           1        7\n 3 003             62            2      1       2           0        3\n 4 004             27            1      0       1           0        3\n 5 005             41            2      0       1           1        7\n 6 006             51            2      0       2           0        3\n 7 007             35            1      1       2           0        2\n 8 008             52            2      1       1           0        2\n 9 009              9            0      0       2           0        3\n10 010             49            2      1       2           0        3\n# ℹ 974 more rows\n# ℹ 45 more variables: Discipline &lt;dbl&gt;, stay_online &lt;dbl&gt;,\n#   neglect_chores &lt;dbl&gt;, excitement &lt;dbl&gt;, relationships &lt;dbl&gt;,\n#   life_complaint &lt;dbl&gt;, school_work &lt;dbl&gt;, email_socialmedia &lt;dbl&gt;,\n#   job_performance &lt;dbl&gt;, defensive_secretive &lt;dbl&gt;,\n#   disturbing_thoughts &lt;dbl&gt;, online_anticipation &lt;dbl&gt;,\n#   life_no_internet &lt;dbl&gt;, act_annoyed &lt;dbl&gt;, late_night_logins &lt;dbl&gt;, …\n\nggplot(phone_usage_filtered, aes(x = New_SQR_total\n, y = Internet_usg)) +\n  geom_point(color=\"blue\", position = \"jitter\")+ geom_smooth(method =\"lm\", color=\"red\")+ labs( title = \"Internet usage correlation with mental health\",\n        x= \"SQR(1-20)\",\n        y=\"Internet usage\")+\n  theme_classic() + facet_wrap(~Gender_coded)\n\n`geom_smooth()` using formula = 'y ~ x'"
+    "text": "Conclusion\nThe graph depicts a weak positive correlation between increasing internet usage and higher SQR scores.\n\nlibrary(ggplot2)\nlibrary(tidyverse)\n\n\nphone_usage_filtered &lt;- phone_usage |&gt; filter(Gender &lt;=1 ) \n\nphone_usage_filtered &lt;- phone_usage_filtered |&gt; mutate(\n  Gender_coded = case_when(\n    Gender == 0 ~ \"Female\",\n    Gender == 1 ~ \"Male\"))\n\nlibrary(readr)\nphone_usage &lt;- read_csv(\"IAT_data_imported[1].csv\")\n\nRows: 984 Columns: 52\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (1): ID\ndbl (51): Internet_usg, Internet_Add, Gender, Age_grp, Level_study, Yr_study...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nphone_usage\n\n# A tibble: 984 × 52\n   ID    Internet_usg Internet_Add Gender Age_grp Level_study Yr_study\n   &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;\n 1 001             33            1      1       1           1        7\n 2 002             10            0      1       1           1        7\n 3 003             62            2      1       2           0        3\n 4 004             27            1      0       1           0        3\n 5 005             41            2      0       1           1        7\n 6 006             51            2      0       2           0        3\n 7 007             35            1      1       2           0        2\n 8 008             52            2      1       1           0        2\n 9 009              9            0      0       2           0        3\n10 010             49            2      1       2           0        3\n# ℹ 974 more rows\n# ℹ 45 more variables: Discipline &lt;dbl&gt;, stay_online &lt;dbl&gt;,\n#   neglect_chores &lt;dbl&gt;, excitement &lt;dbl&gt;, relationships &lt;dbl&gt;,\n#   life_complaint &lt;dbl&gt;, school_work &lt;dbl&gt;, email_socialmedia &lt;dbl&gt;,\n#   job_performance &lt;dbl&gt;, defensive_secretive &lt;dbl&gt;,\n#   disturbing_thoughts &lt;dbl&gt;, online_anticipation &lt;dbl&gt;,\n#   life_no_internet &lt;dbl&gt;, act_annoyed &lt;dbl&gt;, late_night_logins &lt;dbl&gt;, …\n\nggplot(phone_usage_filtered, aes(x = New_SQR_total\n, y = Internet_usg, color= Gender_coded)) +\n  geom_point(position = \"jitter\")+\n  geom_smooth(method =\"lm\", color= \"black\")+\n  labs( title = \"Internet usage vs mental health\",\n        x= \"SQR(1-20)\",\n        y=\"Internet usage\")+\n  theme_classic() + \n  facet_wrap(~Gender_coded)\n\n`geom_smooth()` using formula = 'y ~ x'"
   },
   {
     "objectID": "posts/my_first_post/index.html#conclusion-1",
@@ -26,6 +26,13 @@
     "title": "R project",
     "section": "Conclusion",
     "text": "Conclusion\nThe graph depicts a weak positive correlation between increasing internet usage and higher SQR scores for both females and males."
+  },
+  {
+    "objectID": "posts/my_first_post/index.html#discussion",
+    "href": "posts/my_first_post/index.html#discussion",
+    "title": "R project",
+    "section": "Discussion",
+    "text": "Discussion\nMy original hypothesis that I predict that college students with a higher Internet usage will have higher mental health struggles was supported as there was a positive correlation between higher internet usage and higher SQR scores. This suggests that those who spend more time online have a higher chance of struggling with their mental health."
   },
   {
     "objectID": "about.html",
@@ -124,12 +131,5 @@
     "title": "Using this quarto course blog template",
     "section": "",
     "text": "See this growing list of quarto resources for much, much more:\nhttps://github.com/mcanouil/awesome-quarto"
-  },
-  {
-    "objectID": "posts/my_first_post/index.html#discussion",
-    "href": "posts/my_first_post/index.html#discussion",
-    "title": "R project",
-    "section": "Discussion",
-    "text": "Discussion\nMy original hypothesis that I predict that college students with a higher Internet usage will have higher mental health struggles was supported as there was a positive correlation between higher internet usage and higher SQR scores suggestion that those who spend more time online have a higher chance of struggling with their mental health."
   }
 ]
