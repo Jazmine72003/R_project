@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Matt Crump">
-<meta name="dcterms.date" content="2022-10-21">
+<meta name="author" content="Jazmine Munoz">
 
-<title>My First post – quartoCourseBlog</title>
+<title>R project – Jazmine’s R Portfoilio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -41,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-5a8e8b9f5724df115f1a51278af9f234.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-be4e5ecc5ba8ebc9794bd07940f43ae4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">quartoCourseBlog</span>
+    <span class="navbar-title">Jazmine’s R Portfoilio</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -93,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">About</span></a>
+<span class="menu-text">About me</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/CrumpLab/quartoCourseBlog"> <i class="bi bi-github" role="img">
@@ -116,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">My First post</h1>
+      <h1 class="title">R project</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">goals</div>
                 <div class="quarto-category">general</div>
@@ -130,14 +164,14 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Matt Crump </p>
+               <p>Jazmine Munoz </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 21, 2022</p>
+        <p class="date">August 6, 20225</p>
       </div>
     </div>
     
@@ -156,22 +190,148 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>This is an example first post. Whatever you write here will appear inside your post.</p>
-<p>It is possible to write lists:</p>
-<ol type="1">
-<li>One</li>
-<li>Two</li>
-<li>Three</li>
-</ol>
-<p>And make headers</p>
-<section id="this-is-a-second-level-heading" class="level2">
-<h2 class="anchored" data-anchor-id="this-is-a-second-level-heading">This is a second level heading</h2>
-<p>You can include images, and many other kinds of content.</p>
-<p>If you are using the visual editor in Rstudio you can drag images onto the editor to insert them into the document. Otherwise, you need to place the image inside of the folder for this post, and then you can insert it to your post directly, like this:</p>
-<p><img src="thumbnail.jpg" class="img-fluid"></p>
-<p>The first image in a blog post will also be used on the listings page.</p>
+<p><img src="images/clipboard-3418279616.png" class="img-fluid" width="505"></p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Does high phone usage negatively impact on mental health? I predict that college students with a higher Internet usage will have higher mental health struggles.The data set I will use is Data on Internet Addiction and Mental Health among university students in Malawi</p>
+<section id="approach" class="level3">
+<h3 class="anchored" data-anchor-id="approach">Approach</h3>
+<p>The data set That was utilized was taken between may 2018 and July 2018. The date was collected from 984 participants which included 639 males and 345 females. The sample was randomly selected to be given a mixture of online and paper based questionnaires. These questions were formed to measure their level of internet addiction and a SQR score. Their internet usage was measure on a scale from 0-100 where anything above 40 was considered excessive internet usage internet usage . Their SQR was measure on a scale of (0-20) where anything above 8 was considered at high risk for mental health disorder.</p>
+</section>
+</section>
+<section id="tools" class="level2">
+<h2 class="anchored" data-anchor-id="tools">Tools</h2>
+<ul>
+<li><p>R and Rstudio in Postit.Cloud was utilized for writing the script.</p></li>
+<li><p>Packages Included Tidyverse, readr, and ggplot2 for help creating vizulations.</p></li>
+<li><p>GitHub was utilized for website hosting</p></li>
+</ul>
+</section>
+<section id="approachpredictions" class="level1">
+<h1>Approach/Predictions</h1>
+<p>I will test my previous prediction by examining the correlation between internet usage and and SQR scores. I predict there will be a positive relationship between increasing internet usage and increasing SQR scores.</p>
+<p>Code -</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ lubridate 1.9.4     ✔ tibble    3.3.0
+✔ purrr     1.1.0     ✔ tidyr     1.3.1
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>phone_usage <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"IAT_data_imported[1].csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 984 Columns: 52
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (1): ID
+dbl (51): Internet_usg, Internet_Add, Gender, Age_grp, Level_study, Yr_study...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(phone_usage, <span class="fu">aes</span>(<span class="at">x =</span> New_SQR_total</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>, <span class="at">y =</span> Internet_usg)) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"blue"</span>, <span class="at">position =</span> <span class="st">"jitter"</span>)<span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span><span class="st">"lm"</span>, <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span> <span class="fu">labs</span>( <span class="at">title =</span> <span class="st">"Internet usage correlation with mental health"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">x=</span> <span class="st">"SQR(1-20)"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">y=</span><span class="st">"Internet usage"</span>)<span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The graph depicts a weak positive correlation between increasing internet usage and higher SQR scores.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>phone_usage_filtered <span class="ot">&lt;-</span> phone_usage <span class="sc">|&gt;</span> <span class="fu">filter</span>(Gender <span class="sc">&lt;=</span><span class="dv">1</span> ) </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>phone_usage_filtered <span class="ot">&lt;-</span> phone_usage_filtered <span class="sc">|&gt;</span> <span class="fu">mutate</span>(</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Gender_coded =</span> <span class="fu">case_when</span>(</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    Gender <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"Female"</span>,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    Gender <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Male"</span>))</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>phone_usage <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"IAT_data_imported[1].csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 984 Columns: 52
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (1): ID
+dbl (51): Internet_usg, Internet_Add, Gender, Age_grp, Level_study, Yr_study...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>phone_usage</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 984 × 52
+   ID    Internet_usg Internet_Add Gender Age_grp Level_study Yr_study
+   &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;
+ 1 001             33            1      1       1           1        7
+ 2 002             10            0      1       1           1        7
+ 3 003             62            2      1       2           0        3
+ 4 004             27            1      0       1           0        3
+ 5 005             41            2      0       1           1        7
+ 6 006             51            2      0       2           0        3
+ 7 007             35            1      1       2           0        2
+ 8 008             52            2      1       1           0        2
+ 9 009              9            0      0       2           0        3
+10 010             49            2      1       2           0        3
+# ℹ 974 more rows
+# ℹ 45 more variables: Discipline &lt;dbl&gt;, stay_online &lt;dbl&gt;,
+#   neglect_chores &lt;dbl&gt;, excitement &lt;dbl&gt;, relationships &lt;dbl&gt;,
+#   life_complaint &lt;dbl&gt;, school_work &lt;dbl&gt;, email_socialmedia &lt;dbl&gt;,
+#   job_performance &lt;dbl&gt;, defensive_secretive &lt;dbl&gt;,
+#   disturbing_thoughts &lt;dbl&gt;, online_anticipation &lt;dbl&gt;,
+#   life_no_internet &lt;dbl&gt;, act_annoyed &lt;dbl&gt;, late_night_logins &lt;dbl&gt;, …</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(phone_usage_filtered, <span class="fu">aes</span>(<span class="at">x =</span> New_SQR_total</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>, <span class="at">y =</span> Internet_usg)) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"blue"</span>, <span class="at">position =</span> <span class="st">"jitter"</span>)<span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span><span class="st">"lm"</span>, <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span> <span class="fu">labs</span>( <span class="at">title =</span> <span class="st">"Internet usage correlation with mental health"</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">x=</span> <span class="st">"SQR(1-20)"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">y=</span><span class="st">"Internet usage"</span>)<span class="sc">+</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>Gender_coded)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusion-1" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-1">Conclusion</h2>
+<p>The graph depicts a weak positive correlation between increasing internet usage and higher SQR scores for both females and males.</p>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<p>My original hypothesis that I predict that college students with a higher Internet usage will have higher mental health struggles was supported as there was a positive correlation between higher internet usage and higher SQR scores suggestion that those who spend more time online have a higher chance of struggling with their mental health.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

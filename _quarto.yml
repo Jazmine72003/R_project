@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "quartoCourseBlog"
+  title: "Jazmine's R Portfoilio"
   navbar:
     right:
       - about.qmd
@@ -13,8 +13,10 @@ website:
         href: https://twitter.com/MattCrumpLab
 format:
   html:
-    theme: minty
+    theme: lux
     css: styles.css
 
 editor: visual
+
+
 

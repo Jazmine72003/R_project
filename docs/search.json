@@ -1,17 +1,45 @@
 [
   {
-    "objectID": "posts/Example_assignment/index.html",
-    "href": "posts/Example_assignment/index.html",
-    "title": "Example assignment",
-    "section": "",
-    "text": "This assignment engages you in the process of introspection. Your task is to use introspection to evaluate and describe your own mental imagery abilities. Attempt to answer the following kinds of questions. What is your mental imagery like? Do you have mental imagery for different kinds of senses? Is your mental imagery vivid and life-like or very different from normal perception? How would you describe your mental imagery?\nYou should write a minimum of 250 words, but feel free to write more. Submit your document on blackboard by the due date."
+    "objectID": "posts/my_first_post/index.html#introduction",
+    "href": "posts/my_first_post/index.html#introduction",
+    "title": "R project",
+    "section": "Introduction",
+    "text": "Introduction\nDoes high phone usage negatively impact on mental health? I predict that college students with a higher Internet usage will have higher mental health struggles.The data set I will use is Data on Internet Addiction and Mental Health among university students in Malawi\n\nApproach\nThe data set That was utilized was taken between may 2018 and July 2018. The date was collected from 984 participants which included 639 males and 345 females. The sample was randomly selected to be given a mixture of online and paper based questionnaires. These questions were formed to measure their level of internet addiction and a SQR score. Their internet usage was measure on a scale from 0-100 where anything above 40 was considered excessive internet usage internet usage . Their SQR was measure on a scale of (0-20) where anything above 8 was considered at high risk for mental health disorder."
   },
   {
-    "objectID": "posts/Example_assignment/index.html#my-mental-imagery",
-    "href": "posts/Example_assignment/index.html#my-mental-imagery",
-    "title": "Example assignment",
-    "section": "My mental imagery",
-    "text": "My mental imagery\nMy mental imagery is like…"
+    "objectID": "posts/my_first_post/index.html#tools",
+    "href": "posts/my_first_post/index.html#tools",
+    "title": "R project",
+    "section": "Tools",
+    "text": "Tools\n\nR and Rstudio in Postit.Cloud was utilized for writing the script.\nPackages Included Tidyverse, readr, and ggplot2 for help creating vizulations.\nGitHub was utilized for website hosting"
+  },
+  {
+    "objectID": "posts/my_first_post/index.html#conclusion",
+    "href": "posts/my_first_post/index.html#conclusion",
+    "title": "R project",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe graph depicts a weak positive correlation between increasing internet usage and higher SQR scores.\n\nlibrary(ggplot2)\nlibrary(tidyverse)\n\n\nphone_usage_filtered &lt;- phone_usage |&gt; filter(Gender &lt;=1 ) \n\nphone_usage_filtered &lt;- phone_usage_filtered |&gt; mutate(\n  Gender_coded = case_when(\n    Gender == 0 ~ \"Female\",\n    Gender == 1 ~ \"Male\"))\n\nlibrary(readr)\nphone_usage &lt;- read_csv(\"IAT_data_imported[1].csv\")\n\nRows: 984 Columns: 52\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (1): ID\ndbl (51): Internet_usg, Internet_Add, Gender, Age_grp, Level_study, Yr_study...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nphone_usage\n\n# A tibble: 984 × 52\n   ID    Internet_usg Internet_Add Gender Age_grp Level_study Yr_study\n   &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;\n 1 001             33            1      1       1           1        7\n 2 002             10            0      1       1           1        7\n 3 003             62            2      1       2           0        3\n 4 004             27            1      0       1           0        3\n 5 005             41            2      0       1           1        7\n 6 006             51            2      0       2           0        3\n 7 007             35            1      1       2           0        2\n 8 008             52            2      1       1           0        2\n 9 009              9            0      0       2           0        3\n10 010             49            2      1       2           0        3\n# ℹ 974 more rows\n# ℹ 45 more variables: Discipline &lt;dbl&gt;, stay_online &lt;dbl&gt;,\n#   neglect_chores &lt;dbl&gt;, excitement &lt;dbl&gt;, relationships &lt;dbl&gt;,\n#   life_complaint &lt;dbl&gt;, school_work &lt;dbl&gt;, email_socialmedia &lt;dbl&gt;,\n#   job_performance &lt;dbl&gt;, defensive_secretive &lt;dbl&gt;,\n#   disturbing_thoughts &lt;dbl&gt;, online_anticipation &lt;dbl&gt;,\n#   life_no_internet &lt;dbl&gt;, act_annoyed &lt;dbl&gt;, late_night_logins &lt;dbl&gt;, …\n\nggplot(phone_usage_filtered, aes(x = New_SQR_total\n, y = Internet_usg)) +\n  geom_point(color=\"blue\", position = \"jitter\")+ geom_smooth(method =\"lm\", color=\"red\")+ labs( title = \"Internet usage correlation with mental health\",\n        x= \"SQR(1-20)\",\n        y=\"Internet usage\")+\n  theme_classic() + facet_wrap(~Gender_coded)\n\n`geom_smooth()` using formula = 'y ~ x'"
+  },
+  {
+    "objectID": "posts/my_first_post/index.html#conclusion-1",
+    "href": "posts/my_first_post/index.html#conclusion-1",
+    "title": "R project",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe graph depicts a weak positive correlation between increasing internet usage and higher SQR scores for both females and males."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About me",
+    "section": "",
+    "text": "The content on this page is from about.qmd. Edit that file to change how this page looks.\nHello! My name is Jazmine Munoz and I am a senior at Dominican University with a major in Natural science with a concentration in environmental studies. This website will showcase my R portfolio with the work I have completed so far.\n\nintroduction\n\nmethods\n\ndata source\n\n\n\npackages used\n\n\nApproach\n\n\nDiscussion"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "quartoCourseBlog",
+    "section": "",
+    "text": "Welcome to my website showing off my R portfolio\nI created this website as part of a course at Dominican university\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR project\n\n\n\ngoals\n\ngeneral\n\n\n\n\n\n\n\n\n\nAug 6, 20225\n\n\nJazmine Munoz\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "readme.html",
@@ -98,31 +126,10 @@
     "text": "See this growing list of quarto resources for much, much more:\nhttps://github.com/mcanouil/awesome-quarto"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "quartoCourseBlog",
-    "section": "",
-    "text": "My name is Jazmine Munoz\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMy First post\n\n\n\ngoals\n\ngeneral\n\n\n\n\n\n\n\n\n\nOct 21, 2022\n\n\nMatt Crump\n\n\n\n\n\n\n\n\n\n\n\n\nExample assignment\n\n\n\ngoals\n\ngeneral\n\n\n\n\n\n\n\n\n\nOct 21, 2022\n\n\nMatt Crump\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "The content on this page is from about.qmd. Edit that file to change how this page looks.\n“About” pages are special quarto template pages, with multiple options: https://quarto.org/docs/websites/website-about.html.\nTry changing the template type from jolla to one of the other options for a different look and feel.\nI type–\nHello My name is Jazmine Munoz\nhello"
-  },
-  {
-    "objectID": "posts/my_first_post/index.html",
-    "href": "posts/my_first_post/index.html",
-    "title": "My First post",
-    "section": "",
-    "text": "This is an example first post. Whatever you write here will appear inside your post.\nIt is possible to write lists:\nAnd make headers"
-  },
-  {
-    "objectID": "posts/my_first_post/index.html#this-is-a-second-level-heading",
-    "href": "posts/my_first_post/index.html#this-is-a-second-level-heading",
-    "title": "My First post",
-    "section": "This is a second level heading",
-    "text": "This is a second level heading\nYou can include images, and many other kinds of content.\nIf you are using the visual editor in Rstudio you can drag images onto the editor to insert them into the document. Otherwise, you need to place the image inside of the folder for this post, and then you can insert it to your post directly, like this:\n\nThe first image in a blog post will also be used on the listings page."
+    "objectID": "posts/my_first_post/index.html#discussion",
+    "href": "posts/my_first_post/index.html#discussion",
+    "title": "R project",
+    "section": "Discussion",
+    "text": "Discussion\nMy original hypothesis that I predict that college students with a higher Internet usage will have higher mental health struggles was supported as there was a positive correlation between higher internet usage and higher SQR scores suggestion that those who spend more time online have a higher chance of struggling with their mental health."
   }
 ]

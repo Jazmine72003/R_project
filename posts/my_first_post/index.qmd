@@ -1,26 +1,86 @@
 ---
-title: "My First post"
-author: "Matt Crump"
-date: "2022-10-21"
+title: "R project"
+author: "Jazmine Munoz"
+date: "20225-08-06"
 categories: [goals,general]
 ---
 
-This is an example first post. Whatever you write here will appear inside your post.
+![](images/clipboard-3418279616.png){width="505"}
 
-It is possible to write lists:
+## Introduction
 
-1.  One
-2.  Two
-3.  Three
+Does high phone usage negatively impact on mental health? I predict that college students with a higher Internet usage will have higher mental health struggles.The data set I will use is Data on Internet Addiction and Mental Health among university students in Malawi
 
-And make headers
+### Approach
 
-## This is a second level heading
+The data set That was utilized was taken between may 2018 and July 2018. The date was collected from 984 participants which included 639 males and 345 females. The sample was randomly selected to be given a mixture of online and paper based questionnaires. These questions were formed to measure their level of internet addiction and a SQR score. Their internet usage was measure on a scale from 0-100 where anything above 40 was considered excessive internet usage internet usage . Their SQR was measure on a scale of (0-20) where anything above 8 was considered at high risk for mental health disorder.
 
-You can include images, and many other kinds of content.
+## Tools
 
-If you are using the visual editor in Rstudio you can drag images onto the editor to insert them into the document. Otherwise, you need to place the image inside of the folder for this post, and then you can insert it to your post directly, like this:
+-   R and Rstudio in Postit.Cloud was utilized for writing the script.
 
-![](thumbnail.jpg)
+-   Packages Included Tidyverse and ggplot2 for to create visualizations.
 
-The first image in a blog post will also be used on the listings page.
+-   GitHub was utilized for website hosting
+
+# Approach/Predictions
+
+I will test my previous prediction by examining the correlation between internet usage and and SQR scores. I predict there will be a positive relationship between increasing internet usage and increasing SQR scores.
+
+Code -
+
+```{r}
+library(ggplot2)
+library(tidyverse)
+
+library(readr)
+phone_usage <- read_csv("IAT_data_imported[1].csv")
+
+
+ggplot(phone_usage, aes(x = New_SQR_total
+, y = Internet_usg)) +
+  geom_point(color="#6699cc", position = "jitter")+ geom_smooth(method ="lm", color="black")+ labs( title = "Internet usage vs mental health",
+        x= "SQR(1-20)",
+        y="Internet usage")+
+  theme_classic()
+
+```
+
+## Conclusion
+
+The graph depicts a weak positive correlation between increasing internet usage and higher SQR scores.
+
+```{r}
+library(ggplot2)
+library(tidyverse)
+
+
+phone_usage_filtered <- phone_usage |> filter(Gender <=1 ) 
+
+phone_usage_filtered <- phone_usage_filtered |> mutate(
+  Gender_coded = case_when(
+    Gender == 0 ~ "Female",
+    Gender == 1 ~ "Male"))
+
+library(readr)
+phone_usage <- read_csv("IAT_data_imported[1].csv")
+phone_usage
+
+ggplot(phone_usage_filtered, aes(x = New_SQR_total
+, y = Internet_usg, color= Gender_coded)) +
+  geom_point(position = "jitter")+
+  geom_smooth(method ="lm", color= "black")+
+  labs( title = "Internet usage mental health",
+        x= "SQR(1-20)",
+        y="Internet usage")+
+  theme_classic() + 
+  facet_wrap(~Gender_coded)
+```
+
+## Conclusion
+
+The graph depicts a weak positive correlation between increasing internet usage and higher SQR scores for both females and males.
+
+## Discussion
+
+My original hypothesis that I predict that college students with a higher Internet usage will have higher mental health struggles was supported as there was a positive correlation between higher internet usage and higher SQR scores suggestion that those who spend more time online have a higher chance of struggling with their mental health.
