@@ -9,11 +9,11 @@ categories: [goals,general]
 
 ## Introduction
 
-Does high phone usage negatively impact on mental health? I predict that college students with a higher Internet usage will have higher mental health struggles.The data set I will use is Data on Internet Addiction and Mental Health among university students in Malawi
+Does internet usage have a negative impact on mental health? I predict that college students with a higher Internet usage will have higher mental health struggles.The data set I will use is Data on Internet Addiction and Mental Health among university students in Malawi
 
 ### Approach
 
-The data set That was utilized was taken between may 2018 and July 2018. The date was collected from 984 participants which included 639 males and 345 females. The sample was randomly selected to be given a mixture of online and paper based questionnaires. These questions were formed to measure their level of internet addiction and a SQR score. Their internet usage was measure on a scale from 0-100 where anything above 40 was considered excessive internet usage internet usage . Their SQR was measure on a scale of (0-20) where anything above 8 was considered at high risk for mental health disorder.
+The data set That was utilized was taken between may 2018 and July 2018. The date was collected from 984 participants which included 639 males and 345 females including 52 variables. The sample was randomly selected students who were given a mixture of online and paper based questionnaires. These questions were formed to measure their level of internet addiction and a SQR score. Their internet usage was measure on a scale from 0-100 where anything above 40 was considered excessive internet usage internet usage . Their SQR was measure on a scale of (0-20) where anything above 8 was considered at high risk for mental health disorder.
 
 ## Tools
 
@@ -39,9 +39,9 @@ phone_usage <- read_csv("IAT_data_imported[1].csv")
 
 ggplot(phone_usage, aes(x = New_SQR_total
 , y = Internet_usg)) +
-  geom_point(color="#6699cc", position = "jitter")+ geom_smooth(method ="lm", color="black")+ labs( title = "Internet usage vs mental health",
+  geom_point(color="#6699cc", position = "jitter")+ geom_smooth(method ="lm", color="red")+ labs( title = "Internet usage vs mental health",
         x= "SQR(1-20)",
-        y="Internet usage")+
+        y="Internet usage (0-100) ")+
   theme_classic()
 
 ```
@@ -83,4 +83,4 @@ The graph depicts a weak positive correlation between increasing internet usage 
 
 ## Discussion
 
-My original hypothesis that I predict that college students with a higher Internet usage will have higher mental health struggles was supported as there was a positive correlation between higher internet usage and higher SQR scores suggestion that those who spend more time online have a higher chance of struggling with their mental health.
+My original hypothesis that I predict that college students with a higher Internet usage will have higher mental health struggles was supported as there was a positive correlation between higher internet usage and higher SQR scores. This suggests that those who spend more time online have a higher chance of struggling with their mental health.
