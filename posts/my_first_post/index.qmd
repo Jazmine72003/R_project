@@ -9,7 +9,15 @@ categories: [goals,general]
 
 ## Introduction
 
-Does internet usage have a negative impact on mental health? I predict that college students with a higher Internet usage will have higher mental health struggles.The data set I will use is Data on Internet Addiction and Mental Health among university students in Malawi
+Question 1: Does internet usage have a negative impact on mental health?
+
+Prediction: Individuals with a higher Internet usage will have higher mental health struggles.
+
+Second question: Does the correlation between high internet usage and SQR scores differ between gender.
+
+prediction: Both females and males will have a positive correlation between increasing internet usage and higher mental health struggles.
+
+The data set I will use is Data on Internet Addiction and Mental Health among university students in Malawi
 
 ### Approach
 
@@ -25,7 +33,7 @@ The data set That was utilized was taken between may 2018 and July 2018. The dat
 
 # Approach/Predictions
 
-I will test my previous prediction by examining the correlation between internet usage and and SQR scores. I predict there will be a positive relationship between increasing internet usage and increasing SQR scores.
+I will test my previous prediction by examining the correlation between internet usage and and SQR scores. In addition I will create separate graphs for gender to examine how scenario reacts. I predict there will be a positive relationship between increasing internet usage and increasing SQR scores.
 
 Code -
 
